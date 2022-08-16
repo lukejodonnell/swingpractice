@@ -3,6 +3,9 @@
  */
 package swingpractice;
 
+import java.net.URL;
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class App 
@@ -21,7 +24,13 @@ public class App
         frame.setTitle("Title goes here");
         frame.setSize(420, 420);
         
+        URL iconURL = App.class.getResource("/simple_icon.png");
+        System.out.println(iconURL);
+        
+        ImageIcon icon = new ImageIcon(iconURL);
+        
+        frame.setIconImage(icon.getImage()); //works, but down in the "task bar" not on the window, but probably that's an OS setting on this PC I am typing from
 
-        frame.setVisible(true); //makes frame visable
+        frame.setVisible(true); //makes frame visible
     }
 }
