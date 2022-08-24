@@ -3,9 +3,11 @@
  */
 package swingpractice;
 
+import java.awt.event.KeyEvent;
 import java.net.URL;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class App 
@@ -19,10 +21,13 @@ public class App
     {
         System.out.println(new App().getGreeting());
         JFrame frame = new JFrame();
+        JButton button = new JButton("button text");
+        button.addActionListener(this);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //X button also exits application (app doesn't continue running with no window
         frame.setResizable(true);
         frame.setTitle("Title goes here");
         frame.setSize(420, 420);
+        
         
         URL iconURL = App.class.getResource("/simple_icon.png");
         System.out.println(iconURL);
@@ -30,6 +35,8 @@ public class App
         ImageIcon icon = new ImageIcon(iconURL);
         
         frame.setIconImage(icon.getImage()); //works, but down in the "task bar" not on the window, but probably that's an OS setting on this PC I am typing from
+        
+        frame.add(button);
 
         frame.setVisible(true); //makes frame visible
     }
