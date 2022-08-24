@@ -3,10 +3,12 @@
  */
 package swingpractice;
 
+import java.awt.Color;
 import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class App 
 {
@@ -18,19 +20,15 @@ public class App
     public static void main(String[] args) 
     {
         System.out.println(new App().getGreeting());
+        
+        JLabel label = new JLabel();
+        label.setText("yououou");
+        
         JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //X button also exits application (app doesn't continue running with no window
-        frame.setResizable(true);
-        frame.setTitle("Title goes here");
-        frame.setSize(420, 420);
-        
-        URL iconURL = App.class.getResource("/simple_icon.png");
-        System.out.println(iconURL);
-        
-        ImageIcon icon = new ImageIcon(iconURL);
-        
-        frame.setIconImage(icon.getImage()); //works, but down in the "task bar" not on the window, but probably that's an OS setting on this PC I am typing from
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500,500);
+        frame.add(label);
+        frame.setVisible(true);
 
-        frame.setVisible(true); //makes frame visible
     }
 }
