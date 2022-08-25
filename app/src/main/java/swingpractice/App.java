@@ -17,6 +17,11 @@ public class App
     {
         return "Hello World!";
     }
+    
+    public static void print2()
+    {
+    	System.out.println("wurd 2 ya mama");
+    }
 
     public static void main(String[] args) 
     {
@@ -24,6 +29,7 @@ public class App
         JFrame frame = new JFrame();
 //        frame.setLayout(null);
         JButton button = new JButton("button text");
+        JButton but2 = new JButton("Too two 4 2");
         JLabel label = new JLabel("This hasn't been set yet");
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //X button also exits application (app doesn't continue running with no window
@@ -32,6 +38,12 @@ public class App
         frame.setSize(800, 800);
         NonAnonClass nac = new NonAnonClass();
         button.addActionListener(nac);
+        button.setBounds(5, 5, 200, 40);
+        
+        but2.addActionListener(e -> print2());
+        but2.setBounds(300, 300, 300, 80);
+        
+        label.setBounds(100, 40, 200, 40);
         
         URL iconURL = App.class.getResource("/simple_icon.png");
         System.out.println(iconURL);
@@ -41,8 +53,9 @@ public class App
         frame.setIconImage(icon.getImage()); //works, but down in the "task bar" not on the window, but probably that's an OS setting on this PC I am typing from
         
         frame.add(button);
-//        frame.add(label);
-        frame.pack();
+        frame.add(but2);
+        frame.add(label);
+//        frame.pack();
         
         frame.setVisible(true); //makes frame visible
     }
