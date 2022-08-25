@@ -9,6 +9,7 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class App 
 {
@@ -21,13 +22,16 @@ public class App
     {
         System.out.println(new App().getGreeting());
         JFrame frame = new JFrame();
+//        frame.setLayout(null);
         JButton button = new JButton("button text");
-        button.addActionListener(this);
+        JLabel label = new JLabel("This hasn't been set yet");
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //X button also exits application (app doesn't continue running with no window
         frame.setResizable(true);
         frame.setTitle("Title goes here");
-        frame.setSize(420, 420);
-        
+        frame.setSize(800, 800);
+        NonAnonClass nac = new NonAnonClass();
+        button.addActionListener(nac);
         
         URL iconURL = App.class.getResource("/simple_icon.png");
         System.out.println(iconURL);
@@ -37,7 +41,9 @@ public class App
         frame.setIconImage(icon.getImage()); //works, but down in the "task bar" not on the window, but probably that's an OS setting on this PC I am typing from
         
         frame.add(button);
-
+//        frame.add(label);
+        frame.pack();
+        
         frame.setVisible(true); //makes frame visible
     }
 }
