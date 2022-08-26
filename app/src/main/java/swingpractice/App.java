@@ -26,6 +26,11 @@ public class App
     public static void main(String[] args) 
     {
         System.out.println(new App().getGreeting());
+        
+        MainDeck deck = new MainDeck();
+        deck.printContentsToConsole();
+        deck.suffle();
+        deck.printContentsToConsole();
         JFrame frame = new JFrame();
 //        frame.setLayout(null);
         JButton button = new JButton("button text");
