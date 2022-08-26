@@ -2,6 +2,49 @@ package swingpractice;
 
 public class MainDeck extends LCardStack 
 {
+	public void deleteSingleCard(String type, int value)
+	{
+		System.out.println("we are in the delete Card method");
+		this.lcs.remove(this.findIndexesOf(type, value)[0]);
+		
+	}
+	
+	public int totalGold()
+	{
+		int tot = 0;
+		for(LCard lc : this.lcs)
+		{
+			if(lc.getType() == "gold")
+			{
+				tot = tot + lc.getValue();
+			}
+		}
+		return tot;
+	}
+	
+	public int totalCardsOfType(String type)
+	{
+		int tot = 0;
+		for(LCard lc : this.lcs)
+		{
+			if(lc.getType() == type)
+			{
+				tot = tot + 1;
+			}
+		}
+		return tot;
+	}
+	
+	public int totalGoldCards()
+	{
+		return this.totalCardsOfType("gold");
+	}
+	
+	public int totalHazardCards()
+	{
+		return this.totalCardsOfType("hazard");
+	}
+	
 	public void genGoldCards(boolean consoleDebug)
 	{
 		int[] array = {1,2,3,4,5,5,7,7,9,11,11,13,14,15,17};

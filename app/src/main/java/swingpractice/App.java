@@ -27,10 +27,13 @@ public class App
     {
     	boolean consoleDebug = false;
         System.out.println(new App().getGreeting());
+        LCard lc17 = new LCard("gold" , 17, 0);
         
         MainDeck deck = new MainDeck(consoleDebug);
         deck.printContentsToConsole();
-        deck.suffle();
+        System.out.println("removing card");
+        deck.deleteSingleCard("gold", 17);
+        System.out.println("card removed");
         deck.printContentsToConsole();
         JFrame frame = new JFrame();
 //        frame.setLayout(null);
