@@ -25,9 +25,10 @@ public class App
 
     public static void main(String[] args) 
     {
+    	boolean consoleDebug = false;
         System.out.println(new App().getGreeting());
         
-        MainDeck deck = new MainDeck();
+        MainDeck deck = new MainDeck(consoleDebug);
         deck.printContentsToConsole();
         deck.suffle();
         deck.printContentsToConsole();
