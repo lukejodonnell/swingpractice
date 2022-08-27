@@ -73,6 +73,12 @@ public class MainDeck extends LCardStack
 		}
 	}
 	
+	MainDeck()
+	{
+    	this.genGoldCards(false);
+    	this.genHazardCards(false);
+	}
+	
     MainDeck(boolean consoleDebug)
     {
     	this.genGoldCards(consoleDebug);
