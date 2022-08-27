@@ -53,5 +53,5 @@ public class LCard
 		//write nothing to do nothing except do default action with this constructor
 	}
     
-    
+
 }

@@ -29,12 +29,18 @@ public class App
         System.out.println(new App().getGreeting());
         LCard lc17 = new LCard("gold" , 17, 0);
         
-        MainDeck deck = new MainDeck(consoleDebug);
-        deck.printContentsToConsole();
-        System.out.println("removing card");
-        deck.deleteSingleCard("gold", 17);
-        System.out.println("card removed");
-        deck.printContentsToConsole();
+//        MainDeck deck = new MainDeck(consoleDebug);
+//        deck.printContentsToConsole();
+//        System.out.println("removing card");
+//        deck.deleteSingleCard("gold", 17);
+//        System.out.println("card removed");
+//        deck.printContentsToConsole();
+        
+        Cave cave = new Cave();
+        cave.genTestCave(consoleDebug);
+        System.out.println("If 3 people leave then they each get" + cave.returnPlayers(3) + " gold");
+        cave.printContentsToConsole();
+        
         JFrame frame = new JFrame();
 //        frame.setLayout(null);
         JButton button = new JButton("button text");
