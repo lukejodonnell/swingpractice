@@ -10,6 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 
 public class App 
 {
@@ -42,6 +44,12 @@ public class App
         cave.printContentsToConsole();
         
         JFrame frame = new JFrame();
+        
+        JMenuBar mb = new JMenuBar();
+        JMenu fm = new JMenu("fileeeee");
+        mb.add(fm);
+        
+        frame.setJMenuBar(mb);
 //        frame.setLayout(null);
         JButton button = new JButton("button text");
         JButton but2 = new JButton("Too two 4 2");
