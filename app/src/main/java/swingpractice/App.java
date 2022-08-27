@@ -29,54 +29,6 @@ public class App
     {
 //    	boolean consoleDebug = false;
         System.out.println(new App().getGreeting());
-//        LCard lc17 = new LCard("gold" , 17, 0);
-        
-//        MainDeck deck = new MainDeck(consoleDebug);
-//        deck.printContentsToConsole();
-//        System.out.println("removing card");
-//        deck.deleteSingleCard("gold", 17);
-//        System.out.println("card removed");
-//        deck.printContentsToConsole();
-//        
-//        Cave cave = new Cave();
-//        cave.genTestCave(consoleDebug);
-//        System.out.println("If 3 people leave then they each get" + cave.returnPlayers(3) + " gold");
-//        cave.printContentsToConsole();
-        
-//        JFrame frame = new JFrame();
-//        
-//        AppJMenuBar mb = new AppJMenuBar();
-//        
-//        frame.setJMenuBar(mb);
-//        frame.setLayout(null);
-//        JButton button = new JButton("button text");
-//        JButton but2 = new JButton("Too two 4 2");
-//        JLabel label = new JLabel("This hasn't been set yet");
-
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //X button also exits application (app doesn't continue running with no window
-//        frame.setResizable(true);
-//        frame.setTitle("Title goes here");
-//        frame.setSize(800, 800);
-//        NonAnonClass nac = new NonAnonClass();
-//        button.addActionListener(nac);
-//        button.setBounds(5, 5, 200, 40);
-//        
-//        but2.addActionListener(e -> print2());
-//        but2.setBounds(300, 300, 300, 80);
-//        
-//        label.setBounds(100, 40, 200, 40);
-        
-//        URL iconURL = App.class.getResource("/simple_icon.png");
-//        System.out.println(iconURL);
-//        
-//        ImageIcon icon = new ImageIcon(iconURL);
-//        
-//        frame.setIconImage(icon.getImage()); //works, but down in the "task bar" not on the window, but probably that's an OS setting on this PC I am typing from
-        
-//        frame.add(button);
-//        frame.add(but2);
-//        frame.add(label);
-//        frame.pack();
         MainJFrame mjf = new MainJFrame();
         
         mjf.setVisible(true); //makes frame visible
