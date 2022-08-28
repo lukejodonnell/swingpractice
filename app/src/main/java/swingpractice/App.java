@@ -42,12 +42,12 @@ public class App
         LCard testlc2 = new LCard("gold", 5, 6);
         
         MainDeck deck = new MainDeck();
-        
+        deck.shuffle();
 
         
         CavePanel cpl = new CavePanel();
-        cpl.addCard(testlc);
-        cpl.addCard(testlc2);
+//        cpl.addCard(testlc);
+//        cpl.addCard(testlc2);
         
         DrawButton drawButton = new DrawButton(deck, cpl);
 

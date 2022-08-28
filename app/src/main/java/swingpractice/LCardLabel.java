@@ -1,6 +1,7 @@
 package swingpractice;
 
 import java.awt.Color;
+import java.awt.Rectangle;
 
 import javax.swing.Icon;
 import javax.swing.JLabel;
@@ -15,6 +16,20 @@ public class LCardLabel extends JLabel
 		this.setText(lc.getType() + lc.getValue() + " with " + lc.getGold());
 	}
 	
+	public void simpleGraphicInit(LCard lc)
+	{
+		this.setText(String.valueOf(lc.getValue()));
+		if(lc.getType() == "gold")
+		{
+			this.setBackground(Color.green);
+		}
+		if(lc.getType() == "hazard")
+		{
+			this.setBackground(Color.RED);
+		}
+		this.setOpaque(true);
+	}
+	
 	public void genTestTextInit()
 	{
 		this.setText("this is a card label");
@@ -22,6 +37,7 @@ public class LCardLabel extends JLabel
 //	Constructors
 	public LCardLabel() {
 		super();
+		this.setBackground(Color.blue);
 		// TODO Auto-generated constructor stub
 	}
 

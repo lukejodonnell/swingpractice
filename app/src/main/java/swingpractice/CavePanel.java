@@ -1,5 +1,6 @@
 package swingpractice;
 
+import java.awt.Color;
 import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
@@ -11,8 +12,9 @@ public class CavePanel extends JPanel
 	public void addCard(LCard lc)
 	{
 		LCardLabel lcl = new LCardLabel();
-		lcl.textInit(lc);
+		lcl.simpleGraphicInit(lc);
 		this.add(lcl);
+		this.revalidate();
 	}
 
 	public CavePanel() {

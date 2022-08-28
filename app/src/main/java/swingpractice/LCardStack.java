@@ -18,7 +18,7 @@ public class LCardStack
     	return lcs.get(i);
     }
     
-    public void suffle()
+    public void shuffle()
     {
     	Collections.shuffle(lcs);
     }
