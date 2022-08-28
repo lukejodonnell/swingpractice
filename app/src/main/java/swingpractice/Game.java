@@ -17,7 +17,16 @@ public class Game
 	
 	public void start()
 	{
-//		start the game IDK
+		LCard testlc = new LCard("gold", 17, 0);
+        LCard testlc2 = new LCard("gold", 5, 6);
+        LCard art = new LCard("artifact", 0, 0);
+        
+        MainDeck deck = new MainDeck();
+        deck.add(art);
+        deck.shuffle();
+
+        
+        CavePanel cpl = new CavePanel();
 	}
 	
 	

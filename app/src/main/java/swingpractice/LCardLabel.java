@@ -1,6 +1,7 @@
 package swingpractice;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Rectangle;
 
 import javax.swing.Icon;
@@ -25,7 +26,11 @@ public class LCardLabel extends JLabel
 		}
 		if(lc.getType() == "hazard")
 		{
-			this.setBackground(Color.RED);
+			this.setBackground(Color.pink);
+		}
+		if(lc.getType() == "artifact")
+		{
+			this.setBackground(Color.yellow);
 		}
 		this.setOpaque(true);
 	}
@@ -38,6 +43,7 @@ public class LCardLabel extends JLabel
 	public LCardLabel() {
 		super();
 		this.setBackground(Color.blue);
+		this.setFont(new Font(this.getFont().getName(), this.getFont().getStyle(), 20));
 		// TODO Auto-generated constructor stub
 	}
 
