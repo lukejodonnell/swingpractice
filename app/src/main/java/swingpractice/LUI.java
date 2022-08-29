@@ -63,6 +63,15 @@ public class LUI
 	{
 		this.db = db;
 	}
+	
+	public void update(Game g)
+	{
+		this.cpl.update(g.getCave());
+		if(g.getCave().caveIn())
+		{
+			this.rl.setText("YOU LOST HAHAHAHAH");
+		}
+	}
 
 
 	LUI(Game g)

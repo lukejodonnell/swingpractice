@@ -6,7 +6,7 @@ public class Player
     private int gold;
     private boolean stillGoing;
     
-    public boolean stillIn()
+    public boolean stillGoing()
     {
     	return stillGoing;
     }

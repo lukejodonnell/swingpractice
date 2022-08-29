@@ -18,6 +18,16 @@ public class LCardStack
     	return lcs.get(i);
     }
     
+    public LCard getFirst()
+    {
+    	return this.lcs.getFirst();
+    }
+    
+    public LCard getLast()
+    {
+    	return this.lcs.getLast();
+    }
+    
     public LinkedList<LCard> getList()
     {
     	return this.lcs;

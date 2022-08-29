@@ -1,6 +1,7 @@
 package swingpractice;
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
 
 public class Game 
 {
@@ -53,21 +54,57 @@ public class Game
     	for(int i=0; i<ps.length; i++)
     	{
     		player[i] = new Player(ps[i]);
+    		System.out.println("new Player " + player[i].getName() + " generated");
     	}
 	}
 	
 	public void splitGoldOnCard(LCard lc, Player[] pl)
 	{
-		int gold = lc.getGold() / pl.length;
+		int gold = lc.getValue() / pl.length;
+		System.out.println("I willl give each player " + gold + " gold");
 		for(Player p : pl)
 		{
 			p.addGold(gold);
+			System.out.println("just gave " + p.getName() + " " + gold + " gold");
 		}
-		lc.setGold(lc.getGold() % pl.length);
+		lc.setGold(lc.getValue() % pl.length);
+		this.cave.printContentsToConsole();
 	}
 	
-	public void drawCard()
+	public void returnPlayers(Player[] ps)
 	{
+//		will do this later
+	}
+	
+	public void advancePlayers()
+	{
+		System.out.println (this.cave.getLast().summary());
+		this.splitGoldOnCard(this.cave.getLast(), this.getPlayersForWhomStillGoingIs(true, this.player));
+	}
+	
+	public Player[] getPlayersForWhomStillGoingIs(boolean b, Player[] ps)
+	{
+		ArrayList<Player> arp = new ArrayList<>();
+		for(Player p : ps)
+		{
+			if(p.stillGoing() == b)
+			{
+				arp.add(p);
+			}
+		}
+		System.out.println("here is the return list");
+		for(Player p : ps)
+		{
+			System.out.println(p.getName());
+		}
+		return ps;
+	}
+	
+	public void drawCard(LUI ui)
+	{
+		this.cave.add(this.deck.draw());
+		this.advancePlayers();
+		ui.update(this);
 		
 	}
 	

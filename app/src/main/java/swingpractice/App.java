@@ -35,7 +35,7 @@ public class App
     public static void main(String[] args) 
     {
         System.out.println(new App().getGreeting());
-        String[] players = {"Luke", "Jake"};
+        String[] players = {"Luke", "Jake", "Chosen one"};
         Game g = new Game(players);
         new LUI(g);
         g.start();

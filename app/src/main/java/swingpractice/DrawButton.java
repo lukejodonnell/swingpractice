@@ -10,12 +10,7 @@ public class DrawButton extends JButton
 	
 	public void drawCardMethod(Game g, LUI u)
 	{
-		g.getCave().add(g.getDeck().draw());
-		u.getCpl().update(g.getCave());
-		if(g.getCave().caveIn())
-		{
-			u.getRl().setText("YOU LOST HAHAHAHAH");
-		}
+	g.drawCard(u);	
 	}
 
 	public void init()
