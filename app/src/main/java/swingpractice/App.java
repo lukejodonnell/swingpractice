@@ -62,6 +62,7 @@ public class App
 //        mjf.setVisible(true); //makes frame visible
         String[] players = {"Luke", "Jake"};
         Game g = new Game(players);
+        new LUI(g);
         g.start();
     }
 }

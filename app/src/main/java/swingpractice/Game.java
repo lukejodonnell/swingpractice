@@ -56,15 +56,13 @@ public class Game
         LCard testlc2 = new LCard("gold", 5, 6);
         LCard art = new LCard("artifact", 0, 0);
         
-        MainDeck deck = new MainDeck();
-        deck.add(art);
-        deck.shuffle();
+        this.deck.add(art);
+        this.deck.shuffle();
 
         
 //        CavePanel cpl = new CavePanel();
         
         Cave c = new Cave();
-		LUI ui = new LUI(this);
         
 //        RoundLabel rl = new RoundLabel();
 //        DrawButton drawButton = new DrawButton(this, ui);
