@@ -18,6 +18,11 @@ public class LCardStack
     	return lcs.get(i);
     }
     
+    public LinkedList<LCard> getList()
+    {
+    	return this.lcs;
+    }
+    
     public void shuffle()
     {
     	Collections.shuffle(lcs);

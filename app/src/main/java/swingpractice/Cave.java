@@ -2,6 +2,7 @@ package swingpractice;
 
 public class Cave extends LCardStack 
 {
+	
     public int returnPlayers(int numOfPlayers)
     {
     	int r = 0;
@@ -16,6 +17,28 @@ public class Cave extends LCardStack
 			}
 		}
 		return r;
+    }
+    
+    public boolean caveIn()
+    {
+    	int[] set = {2, 2, 2, 2, 2};
+    	boolean r = false;
+    	for(LCard lc : this.lcs)
+    	{
+    		if(lc.getType() == "hazard")
+    		{
+    			set[lc.getValue()] = set[lc.getValue()] - 1;
+    		}
+    	}
+    	
+    	for(int i : set)
+    	{
+    		if(i <= 0)
+    		{
+    			r = true;
+    		}
+    	}
+    	return r;
     }
     
     public void genTestCave()

@@ -48,13 +48,16 @@ public class App
 
         
         CavePanel cpl = new CavePanel();
+        Cave c = new Cave();
 //        cpl.addCard(testlc);
 //        cpl.addCard(testlc2);
         
-        DrawButton drawButton = new DrawButton(deck, cpl);
+        RoundLabel rl = new RoundLabel();
+        DrawButton drawButton = new DrawButton(deck, c, cpl, rl);
 
-        mjf.add(cpl, BorderLayout.NORTH);
-        mjf.add(drawButton, BorderLayout.CENTER);
+        mjf.add(rl, BorderLayout.NORTH);
+        mjf.add(cpl, BorderLayout.CENTER);
+        mjf.add(drawButton, BorderLayout.SOUTH);
         
         mjf.setVisible(true); //makes frame visible
     }

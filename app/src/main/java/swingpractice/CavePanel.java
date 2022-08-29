@@ -9,6 +9,17 @@ public class CavePanel extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 	
+	public void update(Cave c)
+	{
+		this.removeAll();
+		for(LCard lc : c.getList())
+		{
+			this.addCard(lc);
+		}
+		this.revalidate();
+		this.repaint();
+	}
+	
 	public void addCard(LCard lc)
 	{
 		LCardLabel lcl = new LCardLabel();

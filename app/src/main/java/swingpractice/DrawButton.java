@@ -8,9 +8,14 @@ public class DrawButton extends JButton
 {
 	private static final long serialVersionUID = 1L;
 	
-	public void drawCardMethod(MainDeck deck, CavePanel cpl)
+	public void drawCardMethod(MainDeck deck, Cave c, CavePanel cpl, RoundLabel rl)
 	{
-		cpl.addCard(deck.draw());
+		c.add(deck.draw());
+		cpl.update(c);
+		if(c.caveIn())
+		{
+			rl.setText("YOU LOST HAHAHAHAH");
+		}
 	}
 
 	public void init()
@@ -18,9 +23,9 @@ public class DrawButton extends JButton
 		
 	}
 	
-	public DrawButton(MainDeck deck, CavePanel cpl) {
+	public DrawButton(MainDeck deck, Cave c, CavePanel cpl, RoundLabel rl) {
 		super("Draw Card");
-		this.addActionListener(e -> drawCardMethod(deck, cpl));
+		this.addActionListener(e -> drawCardMethod(deck, c, cpl, rl));
 	}
 
 	public DrawButton(Action a) {
