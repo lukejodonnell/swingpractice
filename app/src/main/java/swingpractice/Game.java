@@ -8,6 +8,35 @@ public class Game
 	Cave cave;
 	MainDeck deck;
 	
+	public Player[] getPlayer() 
+	{
+		return player;
+	}
+
+	public void setPlayer(Player[] player) 
+	{
+		this.player = player;
+	}
+
+	public Cave getCave() {
+		return cave;
+	}
+
+	public void setCave(Cave cave) 
+	{
+		this.cave = cave;
+	}
+
+	public MainDeck getDeck() 
+	{
+		return deck;
+	}
+
+	public void setDeck(MainDeck deck) 
+	{
+		this.deck = deck;
+	}
+
 	public void genPlayers(String[] ps)
 	{
     	player = new Player[ps.length];
@@ -19,8 +48,9 @@ public class Game
 	
 	public void start()
 	{
-        MainJFrame mjf = new MainJFrame();
-        mjf.setLayout(new BorderLayout());
+//        MainJFrame mjf = new MainJFrame();
+//        mjf.setLayout(new BorderLayout());
+
         
 		LCard testlc = new LCard("gold", 17, 0);
         LCard testlc2 = new LCard("gold", 5, 6);
@@ -31,18 +61,19 @@ public class Game
         deck.shuffle();
 
         
-        CavePanel cpl = new CavePanel();
+//        CavePanel cpl = new CavePanel();
         
         Cave c = new Cave();
+		LUI ui = new LUI(this);
         
-        RoundLabel rl = new RoundLabel();
-        DrawButton drawButton = new DrawButton(deck, c, cpl, rl);
+//        RoundLabel rl = new RoundLabel();
+//        DrawButton drawButton = new DrawButton(this, ui);
 
-        mjf.add(rl, BorderLayout.NORTH);
-        mjf.add(cpl, BorderLayout.CENTER);
-        mjf.add(drawButton, BorderLayout.SOUTH);
-        
-        mjf.setVisible(true); //makes frame visible
+//        mjf.add(rl, BorderLayout.NORTH);
+//        mjf.add(cpl, BorderLayout.CENTER);
+//        mjf.add(drawButton, BorderLayout.SOUTH);
+//        
+//        mjf.setVisible(true); //makes frame visible
 	}
 	
 	
