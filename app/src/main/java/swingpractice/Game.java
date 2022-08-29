@@ -8,14 +8,24 @@ public class Game
 	Cave cave;
 	MainDeck deck;
 	
-	public Player[] getPlayer() 
+	public Player[] getPlayersArray() 
 	{
 		return player;
 	}
 
-	public void setPlayer(Player[] player) 
+	public void setPlayersArray(Player[] player) 
 	{
 		this.player = player;
+	}
+	
+	public Player getPlayer(int i)
+	{
+		return this.player[i];
+	}
+	
+	public void setPlayer(Player p, int i)
+	{
+		this.player[i] = p;
 	}
 
 	public Cave getCave() {
@@ -46,32 +56,30 @@ public class Game
     	}
 	}
 	
+	public void splitGoldOnCard(LCard lc, Player[] pl)
+	{
+		int gold = lc.getGold() / pl.length;
+		for(Player p : pl)
+		{
+			p.addGold(gold);
+		}
+		lc.setGold(lc.getGold() % pl.length);
+	}
+	
+	public void drawCard()
+	{
+		
+	}
+	
 	public void start()
 	{
-//        MainJFrame mjf = new MainJFrame();
-//        mjf.setLayout(new BorderLayout());
-
-        
-		LCard testlc = new LCard("gold", 17, 0);
-        LCard testlc2 = new LCard("gold", 5, 6);
+//		LCard testlc = new LCard("gold", 17, 0);
+        LCard testlc2 = new LCard("gold", 50, 0);
         LCard art = new LCard("artifact", 0, 0);
         
         this.deck.add(art);
+        this.deck.add(testlc2);
         this.deck.shuffle();
-
-        
-//        CavePanel cpl = new CavePanel();
-        
-        Cave c = new Cave();
-        
-//        RoundLabel rl = new RoundLabel();
-//        DrawButton drawButton = new DrawButton(this, ui);
-
-//        mjf.add(rl, BorderLayout.NORTH);
-//        mjf.add(cpl, BorderLayout.CENTER);
-//        mjf.add(drawButton, BorderLayout.SOUTH);
-//        
-//        mjf.setVisible(true); //makes frame visible
 	}
 	
 	

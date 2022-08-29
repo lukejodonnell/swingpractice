@@ -19,7 +19,7 @@ public class LCardLabel extends JLabel
 	
 	public void simpleGraphicInit(LCard lc)
 	{
-		this.setText(String.valueOf(lc.getValue()));
+		this.setText("<html>" + lc.getValue() + "<br/>" + lc.getGold() + "</html>");
 		if(lc.getType() == "gold")
 		{
 			this.setBackground(Color.green);
